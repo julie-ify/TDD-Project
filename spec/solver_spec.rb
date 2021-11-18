@@ -17,6 +17,10 @@ describe Solver do
     it 'Takes a number and and returns its factorial' do
       expect(@solver.factorial(0)).to eq(1)
     end
+
+    it 'returns a message if the integer is negative' do
+      expect(@solver.factorial(-13)).to eq('The number should be positive')
+    end
   end
 
   describe 'testing the reverse of a string' do

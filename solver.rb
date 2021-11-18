@@ -1,9 +1,13 @@
 class Solver
   def factorial(num)
-    if num.zero?
-      1
+    if num >= 0
+      if num.zero?
+        1
+      else
+        num * factorial(num - 1)
+      end
     else
-      num * factorial(num - 1)
+      'The number should be positive'
     end
   end
 
@@ -12,12 +16,11 @@ class Solver
   end
 
   def fizzbuzz(num)
-    case 
-    when (num % 3).zero? && num % 5 != 0
+    if (num % 3).zero? && num % 5 != 0
       'fizz'
-    when (num % 5).zero? && num % 3 != 0
+    elsif (num % 5).zero? && num % 3 != 0
       'buzz'
-    when (num % 5).zero? && (num % 3).zero?
+    elsif (num % 5).zero? && (num % 3).zero?
       'fizzbuzz'
     else
       num
